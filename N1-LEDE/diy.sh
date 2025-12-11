@@ -26,6 +26,7 @@ git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/lucky
 #添加自定义的软件包源
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-openclash
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-unblockmusic
+git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease
 # Remove packages
 #删除lean库中的插件，使用自定义源中的包。
 rm -rf feeds/packages/net/v2ray-geodata
@@ -38,7 +39,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 #rm -rf feeds/luci/applications/luci-app-design-config
 
 # Default IP
-sed -i 's/192.168.1.1/192.168.10.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
 
 #修改默认时间格式
 sed -i 's/os.date()/os.date("%Y-%m-%d %H:%M:%S %A")/g' $(find ./package/*/autocore/files/ -type f -name "index.htm")
